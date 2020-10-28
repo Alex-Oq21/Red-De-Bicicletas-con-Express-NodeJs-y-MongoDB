@@ -26,5 +26,12 @@ biciclteaSchema.methods.toString = function(){
 biciclteaSchema.statics.allBicis = function(cb){
     return this.find({}, cb);
 }
+bicicletaSchema.statics.findByCode = function(aCode, cb){
+    return this.findOne({code: aCode}, cb)
+  }
+  
+  bicicletaSchema.statics.removeByCode = function(aCode, cb){
+    return this.deleteOne({code: aCode}, cb)
+  }
 module.exports = mongoose.model('Bicicleta', biciclteaSchema);
 
